@@ -1,0 +1,87 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+.statusbar-overlay {
+    background: #000000;
+}
+
+.navbar{
+    background: #ff5200;
+}
+
+.page-content{
+    background: white;
+}
+
+.top-content{
+    min-height: 180px;
+}
+
+.logo{
+    width:100%;
+}
+
+h1 {
+    color: #000;
+    font: 42px/1.1 Malina,sans-serif;
+    -webkit-text-stroke: 1px transparent;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 0 22px;
+}
+
+.faq__collapse__item {
+    cursor: pointer;
+    cursor: hand;
+    color: #277dff;
+    text-decoration: none;
+}
+
+.accordion-item-content{
+    color: #000;
+    background: #fff;
+    font: 17px/1.2 Helvetica,Arial,sans-serif;
+
+}
+
+.ul_pad{
+    padding: 0px;
+    list-style-type: none;
+}
+
+.item-title{
+
+    color: #277dff;
+    font: 22px/1.1 Malina,sans-serif;
+    -webkit-text-stroke: 1px transparent;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 0 17px;
+}
+
+.center-block{
+    display: block;
+    margin: 0 auto;
+}
+
+.bottom{
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.bottom-tips ul{
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 30px;
+    color: #000;
+    background: #fff;
+    font: 17px/1.2 Helvetica,Arial,sans-serif;
+
+}

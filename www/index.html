@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>Пицца лисицца</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/vendors.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="left">
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars color-white"></i></a>
+
+                    </div>
+                    <div class="center sliding"><a class="top__cart__item" href="cart.html">Конзина</a></div>
+                    <div class="right">
+                        <span class="top__cart__inner basket-sum">0,00</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="">
+                            <div class="top-content">
+                            <ul class="goods-nav">
+                                <li class="goods-nav__li"><a class="pizza-nav goods-nav__item" href="/pizzas" data-forward="pizzas">пиццы</a></li>
+                                <li class="goods-nav__li"><a class="pizza-nav goods-nav__item" href="/snacks" data-forward="snacks">закуски</a></li>
+                                <li class="goods-nav__li"><a class="pizza-nav goods-nav__item" href="/desserts" data-forward="desserts">десерты</a></li>
+                                <li class="goods-nav__li"><a class="pizza-nav goods-nav__item" href="/drinks" data-forward="drinks">напитки</a></li>
+                            </ul>
+                            <ul class="corp-nav">
+                                <!--class="corp-nav__li corp-nav_active"-->
+                                <li class="corp-nav__li">
+                                    <a href="vacancy.html" data-forward="vacancy" class="corp-nav__item">вакансии</a>
+                                </li>
+                                <li class="corp-nav__li">
+                                    <a href="faq.html" data-forward="faq" class="corp-nav__item">FAQ</a>
+                                </li>
+                                <li class="corp-nav__li">
+                                    <a href="contacts.html" data-forward="contacts" class="corp-nav__item">зона доставки</a>
+                                </li>
+                            </ul>
+                            <img class="top__logo" src="/img/logo_text.png">
+                                </div>
+                            <div class="banner-mobile">
+                                <p class="free-pizza">
+                                    если мы не доставим за
+                                    <strong>60 минут</strong>
+                                    вы получите одну пиццу из заказа бесплатно<br>
+                                </p>
+                                <p>доставка пиццы круглосуточно</p>
+                                <p><a href="tel:7556655" class="colored">755-66-55</a>велком мтс лайф</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
