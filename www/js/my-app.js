@@ -25,4 +25,17 @@ myApp.onPageInit('about', function (page) {
 
 })
 
+$$('#camera').on('click', function () {
 
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+    function onPhotoURISuccess(imageData) {
+        alert(imageData);
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+});
