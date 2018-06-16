@@ -1,0 +1,63 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link color-white">
+                <i class="icon icon-back color-white"></i>
+            </a>
+        </div>
+        <div class="center sliding"><span class="top__cart__item">Пицца</span></div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="item" class="page">
+        <div class="page-content">
+            <div class="content-block">
+
+                <script id="ItemTemplate" type="text/template7">
+                        <div class="text-center">
+                            <img class="" src="/img/{{img}}" alt="">
+                            <div class="goods__list__text text-center">
+                                <h3 class="goods__list__title">
+                                    <a class="show-preview" data-toggle="modal" data-target="#myModal" href="">
+                                        {{name}}
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="row padding-box">
+                                <div class="col-md pizza-price-box">
+                                    <span class="grey">Большая</span>
+                                    <div class="pizza-price">{{price_b}}</div>
+                                    <div>{{size_b}}</div>
+                                </div>
+                                <div class="col-md pizza-price-box">
+                                    <div class="grey">Стандартная </div>
+                                    <div class="pizza-price">{{price_m}}</div>
+                                    <div>{{size_m}}</div>
+                                </div>
+                            </div>
+                            <div class="goods__list__text" style="float: none; text-align: center">
+                                <p class="description padding-box">{{description}}</p>
+                            </div>
+                        </div>
+                </script>
+
+                <div class="row text-center" id="item-container"></div>
+
+                <div class="goods__list__buttons">
+
+                    <button class="in-basket" type="button">
+                        <span class="txt">В корзину</span>
+                        <span class="ico"></span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

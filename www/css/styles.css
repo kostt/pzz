@@ -85,3 +85,45 @@ h1 {
     font: 17px/1.2 Helvetica,Arial,sans-serif;
 
 }
+
+.text-center{
+    width: 100%;
+    text-align: center;
+}
+
+.description{
+    color: #999;
+    font-size: 15px;
+    text-align: left;
+}
+
+.grey{
+    color: #999;
+}
+
+.padding-box{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.pizza-price{
+    color: #000;
+    font: 32px/1.1 Malina,sans-serif;
+}
+
+.pizza-price-box{
+    width: 100px;
+}
+
+.bottom-tips ul li:before {
+    content: '-';
+}
+
+.panel-item{
+    color: white;
+    font-size: 18px;
+}
+
+.ul-panel li{
+    margin-bottom: 15px;
+}

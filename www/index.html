@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -10,9 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
 
     <!-- Your app title -->
-    <title>P</title>
+    <title>Пицца лисицца</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -35,7 +37,11 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
         <div class="content-block">
-            <p>Left panel content goes here</p>
+            <ul class="ul-panel">
+                <li><a class="panel-item close-panel" href="/vacancy.html" data-forward="pizzas">Вакансии</a></li>
+                <li><a class="panel-item close-panel" href="/faq.html" data-forward="snacks">FAQ</a></li>
+                <li><a class="panel-item close-panel" href="/dostavka.html" data-forward="desserts">Зона доставки</a></li>
+            </ul>
         </div>
     </div>
 
@@ -80,10 +86,10 @@
                                     <a href="faq.html" data-forward="faq" class="corp-nav__item">FAQ</a>
                                 </li>
                                 <li class="corp-nav__li">
-                                    <a href="contacts.html" data-forward="contacts" class="corp-nav__item">зона доставки</a>
+                                    <a href="dostavka.html" data-forward="dostavka" class="corp-nav__item">зона доставки</a>
                                 </li>
                             </ul>
-                            <img class="top__logo" src="/img/logo_text.png">
+                            <img class="top__logo" src="./img/logo_text.png">
                                 </div>
                             <div class="banner-mobile">
                                 <p class="free-pizza">
@@ -94,7 +100,81 @@
                                 <p>доставка пиццы круглосуточно</p>
                                 <p><a href="tel:7556655" class="colored">755-66-55</a>велком мтс лайф</p>
                             </div>
+
+
+
+                            <script id="pzzItemTemplate" type="text/template7">
+                                {{#each item}}
+                                <a href="item.html?id={{id}}">
+                                <div class="text-center">
+                                    <img class="" src="/img/{{img}}" alt="">
+                                    <div class="goods__list__text text-center">
+                                        <h3 class="goods__list__title">
+                                            <a class="show-preview" data-toggle="modal" data-target="#myModal" href="">
+                                                {{name}}
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div class="row padding-box">
+                                        <div class="col-md pizza-price-box">
+                                            <span class="grey">Большая</span>
+                                            <div class="pizza-price">{{price_b}}</div>
+                                            <div>{{size_b}}</div>
+                                        </div>
+                                        <div class="col-md pizza-price-box">
+                                            <div class="grey">Стандартная </div>
+                                            <div class="pizza-price">{{price_m}}</div>
+                                            <div>{{size_m}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="goods__list__text">
+                                        <p class="description padding-box">{{description}}</p>
+                                    </div>
+                                </div>
+                                </a>
+                                {{else}}
+                                <div class="col-100">
+                                    <div class="placeholder-section text-center">
+                                        <div class="ps-image-cnt m-b-40">
+                                            <div class="sad-broccoli-icon"></div>
+                                        </div>
+                                        <div class="ps-title f-s-18 f-w-300 text-grey">Нет пицц</div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </script>
+                            <h2 class="goods__title" id="pizzas">Пиццы</h2>
+
+                                <div class="row text-center" id="pzz-container"></div>
+
+                            <img class="center-block" src="/img/logo.png">
+
+                            <div class="bottom-tips">
+                                <div class="">
+                                    <ul class="ul_pad">
+                                        <li>Наша <a href="/contacts">зона доставки</a>&nbsp;ограничена</li>
+                                        <li>Минимальная сумма заказа для доставки с понедельника по четверг с 12:00 до 16:00 составляет 9,40 рублей.&nbsp;В остальное время, предпраздничные и праздничные дни&nbsp;– 12,40 рублей</li>
+                                        <li>Наши <a href="/rules" target="_blank">правила оказания услуг</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <div class="bottom "><p>Замечания и предложения направляйте по адресу&nbsp;<a href="mailto:v@pzz.by">v@pzz.by</a></p>
+
+                                <p>Интернет-магазин зарегистрирован в Торговом реестре Республики Беларусь 24.01.2018г. Регистрационный номер 403355.<br>
+                                    ООО «Крошка моя». 220125 г. Минск, ул. Городецкая, д.38а, помещение 1. УНП 192588135</p>
+
+                                <p>+375 44 755-66-55, +375 29 755-66-55, +375 25 755-66-55</p>
+
+                                <p>© Крошка моя&nbsp;2017</p>
+                            </div>
+
                         </div>
+
+
+
+
                     </div>
                 </div>
             </div>

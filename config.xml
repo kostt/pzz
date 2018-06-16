@@ -8,6 +8,9 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <allow-navigation href="*youtube*" />
+    <allow-navigation href="*ytimg*" />
+    <allow-navigation href="*"/>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -72,8 +75,4 @@
         <splash height="960" platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" />
         <splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />
     </platform>
-    <plugin name="cordova-plugin-camera" spec="^2.4.1">
-        <param name="CAMERA_USAGE_DESCRIPTION" value="The app would like to access the camera when you attach photos to content." />
-        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="The app would like to access the photo library when you attach images to content." />
-    </plugin>
 </widget>

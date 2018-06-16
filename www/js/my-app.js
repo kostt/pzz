@@ -1,41 +1,99 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    modalTitle: "Пицца лисицца",
+    precompileTemplates: true,
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
+var data = {
+    'item': [
+        {
+        "id": '1',
+        "name": 'Мексиканская',
+        "img": '38TshmyBfN.jpg',
+        "price_b": "17,90",
+        "size_b": "0,8 - 0,9 кг",
+        "price_m": "13,50",
+        "size_m": "0,6 - 0,7 кг",
+        "description": "пицца-соус,  филе цыпленка, свежие томаты, свежие шампиньоны, свежий болгарский перец, свежий лук, перец халапеньо, сыр моцарелла, базилик"
+        },
+        {
+        "id": '2',
+        "name": 'Ранч пицца',
+        "img": '7uPzZEyOvx.jpg',
+        "price_b": "17,90",
+        "size_b": "0,8 - 0,9 кг",
+        "price_m": "13,50",
+        "size_m": "0,6 - 0,7 кг",
+        "description": "американский соус ранч, филе цыпленка, ветчина, свежие томаты, сыр моцарелла, базилик"
+        },
+        {
+            "id": '3',
+            "name": 'Баварская',
+            "img": 'IdU2r6gLbo.jpg',
+            "price_b": "17,90",
+            "size_b": "0,8 - 0,9 кг",
+            "price_m": "13,50",
+            "size_m": "0,6 - 0,7 кг",
+            "description": "пицца-соус,  филе цыпленка, свежие томаты, свежие шампиньоны, свежий болгарский перец, свежий лук, перец халапеньо, сыр моцарелла, базилик"
+        },
+        {
+            "id": '4',
+            "name": 'Чесночный цыпленок',
+            "img": 'PDJuNhmrno.jpg',
+            "price_b": "17,90",
+            "size_b": "0,8 - 0,9 кг",
+            "price_m": "13,50",
+            "size_m": "0,6 - 0,7 кг",
+            "description": "американский соус ранч, филе цыпленка, ветчина, свежие томаты, сыр моцарелла, базилик"
+        }
+    ]
+};
+
 // Add view
 var mainView = myApp.addView('.view-main', {
-    // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true
 });
 
-// Handle Cordova Device Ready Event
-$$(document).on('deviceready', function() {
-    console.log("Device is ready!");
+
+$$(document).on('DOMContentLoaded', function(){
+    var couponsContainer = $$('#pzz-container');
+    var template = $$('#pzzItemTemplate').html();
+    var compiledTemplate = Template7.compile(template);
+    var html = compiledTemplate(data);
+    couponsContainer.html(html);
 });
 
 
-// Now we need to run the code that will be executed only for About page.
+myApp.onPageInit('item', function (page) {
 
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
+    data.item.forEach(function(element) {
+            if(element.id == page.query.id){
+                itemData = element;
+            }
+    });
 
-})
+    var itemContainer = $$('#item-container');
+    var template = $$('#ItemTemplate').html();
+    var compiledTemplate = Template7.compile(template);
+    var html = compiledTemplate(itemData);
+    itemContainer.html(html);
 
-$$('#camera').on('click', function () {
+    $$('.in-basket').on('click', function(){
+        myApp.alert('Товар добавлен в корзину');
+    })
 
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-    function onPhotoURISuccess(imageData) {
-        alert(imageData);
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
 });
+
+
+
+
+
+
+
+
+
+
