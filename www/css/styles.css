@@ -127,3 +127,7 @@ h1 {
 .ul-panel li{
     margin-bottom: 15px;
 }
+
+.statusbar-overlay{
+    background: #ff5200;
+}
