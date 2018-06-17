@@ -5,7 +5,7 @@
         Заказ пиццы в Минске
     </description>
     <author email="konstantin.alexandrovitch2017@yandex.by" href="https://vk.com/id5267818">
-        Apache Cordova Team
+        Pzz
     </author>
     <content src="index.html" />
     <allow-navigation href="*youtube*" />
@@ -27,7 +27,9 @@
         <preference name="BackupWebStorage" value="none" />
     </platform>
     <preference name="StatusBarBackgroundColor" value="#ff5200" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="android">
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
