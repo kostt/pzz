@@ -10,8 +10,8 @@
    See https://github.com/apache/cordova-plugin-statusbar
 */
 
-.statusbar-overlay {
-    background: #000000;
+.statusbar-overlay{
+    background: #ff5200;
 }
 
 .navbar{
@@ -128,6 +128,3 @@ h1 {
     margin-bottom: 15px;
 }
 
-.statusbar-overlay{
-    background: #ff5200;
-}
