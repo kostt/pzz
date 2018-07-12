@@ -67,6 +67,43 @@ $$(document).on('DOMContentLoaded', function(){
     couponsContainer.html(html);
 });
 
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+// device APIs are available
+//
+function onDeviceReady() {
+
+    var notificationOpenedCallback = function(jsonData) {
+        myApp.addNotification({
+            title: jsonData.payload.title,
+            message: jsonData.payload.body
+        });
+    };
+
+    window.plugins.OneSignal.setLogLevel({logLevel: 6, visualLevel: 4});
+
+    // if (myApp.device.android) {
+    //
+    //     window.plugins.OneSignal
+    //         .startInit("210a27d1-db83-4dda-a075-a4814ee3f67d")
+    //         .handleNotificationOpened(notificationOpenedCallback)
+    //         .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+    //         .endInit();
+    //
+    // }else{
+
+    window.plugins.OneSignal
+        .startInit("e909a986-0407-454c-8a3b-f518bc11576a")
+        .handleNotificationOpened(notificationOpenedCallback)
+        .endInit();
+    // }
+
+
+
+}
+
 
 myApp.onPageInit('item', function (page) {
 
